@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rec</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <nav>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Principal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>           
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <h4>Contato</h4>
+
+                <div class="alert alert-danger" id="alert-erro"> 
+                        Preencha os campos corretamente.
+                </div>
+
+                <div class="alert alert-success" id="alert-sucesso">
+                        Enviado com sucesso!.
+                </div>
+            </div>
+
+            <div class="form-group">
+            <label>Nome</label>
+            <input class="form-control" type="text" id="nome">
+        </div>
+
+        <div class="form-group">
+            <label>Telefone</label>
+            <input class="form-control" type="text" placeholder="(48) 99621-3825" id="telefone">
+        <div>
+
+        <div class="form-group">
+            <label>E-mail</label>
+            <input class="form-control" type="email" id="email"
+                placeholder="matheuscarminatti@gmail.com">
+        </div>
+
+
+        <div class="form-group">
+            <button type="reset"
+                class="btn btn-secondary">
+                    Cancelar  
+            </button>
+
+            <button type="button" onclick="enviar()"
+            class="btn btn-success">
+                Enviar
+            </button>
+        </div>
+
+
+    <script>
+        const enviar = function(){
+            console.log('ok')
+            let nome = document.getElementById('nome').value
+            let telefone = document.getElementById('telefone').value
+            let email = document.getElementById('email').value
+            let erro = false
+
+            if (telefone ==""){
+                erro = true
+            }
+
+            if (nome == ""){
+                erro = true
+            }
+
+            if (email == ""){
+                erro = true
+            }
+
+            if (erro){
+                document.getElementById('alert-erro').style.display = "block"
+                document.getElementById('alert-sucesso').style.display = "none"
+            } else {
+                document.getElementById('alert-erro').style.display = "none"
+                document.getElementById('alert-sucesso').style.display = "block"
+            }      
+            const limpar = function(){
+
+                document.getElementById('alert-erro').style.display = "none"
+                document.getElementById('alert-sucesso').style.display = "none" 
+    }
+
+}
+    </script>
+</body>
+</html>
